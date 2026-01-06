@@ -363,6 +363,50 @@ body {
 .quiz-answer.correct { background: #dcfce7; border-color: var(--success); }
 .quiz-answer.incorrect { background: #fee2e2; border-color: var(--error); }
 
+/* --- Efekty Specjalne (Fajerwerki i Boom) --- */
+.firework-particle {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    animation: fireworkExplode 1.5s ease-out forwards;
+}
+
+@keyframes fireworkExplode {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+}
+
+.boom-text {
+    position: fixed;
+    font-size: 5rem;
+    font-weight: 900;
+    color: #ff4757;
+    text-shadow: 0 0 20px rgba(255, 71, 87, 0.5);
+    z-index: 10000;
+    pointer-events: none;
+    animation: boomEffect 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes boomEffect {
+    0% { transform: translate(-50%, -50%) scale(0) rotate(-20deg); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1.5) rotate(10deg); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1.2) rotate(0deg); opacity: 0; }
+}
+
+.screen-shake {
+    animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
 .footer { padding: 4rem 0; text-align: center; color: var(--text-muted); border-top: 1px solid #e2e8f0; }
 
 @media (max-width: 640px) {
