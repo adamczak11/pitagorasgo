@@ -229,15 +229,23 @@ body {
     transition: all 0.3s;
 }
 
+.header .author-label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    opacity: 0.85;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
 .header .author-name {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 800;
 }
 
 .header .author-info {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 500;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 .header .author:hover {
