@@ -251,9 +251,21 @@
         let currentQuiz = [];
         let currentQuestion = 0;
         let score = 0;
+        let shuffledAnswers = [];
+        let correctIndex = 0;
+
+        // Funkcja mieszająca tablicę (Fisher-Yates)
+        function shuffle(array) {
+            const arr = [...array];
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            return arr;
+        }
 
         function startQuiz(level) {
-            currentQuiz = [...quizData[level]];
+            currentQuiz = shuffle([...quizData[level]]); // Losowa kolejność pytań
             currentQuestion = 0;
             score = 0;
             document.getElementById('quiz-modal').classList.add('active');
@@ -263,6 +275,16 @@
         function showQuestion() {
             const q = currentQuiz[currentQuestion];
             const progress = ((currentQuestion) / currentQuiz.length) * 100;
+
+            // Przygotuj odpowiedzi z informacją która jest poprawna
+            const answersWithIndex = q.answers.map((ans, idx) => ({
+                text: ans,
+                isCorrect: idx === q.correct
+            }));
+
+            // Wymieszaj odpowiedzi
+            shuffledAnswers = shuffle(answersWithIndex);
+            correctIndex = shuffledAnswers.findIndex(a => a.isCorrect);
 
             let html = `
                 <div class="quiz-progress">
@@ -275,8 +297,8 @@
                 <div class="quiz-answers">
             `;
 
-            q.answers.forEach((answer, index) => {
-                html += `<div class="quiz-answer" onclick="checkAnswer(${index})">${answer}</div>`;
+            shuffledAnswers.forEach((answer, index) => {
+                html += `<div class="quiz-answer" onclick="checkAnswer(${index})">${answer.text}</div>`;
             });
 
             html += '</div>';
@@ -284,19 +306,18 @@
         }
 
         function checkAnswer(selected) {
-            const q = currentQuiz[currentQuestion];
             const answers = document.querySelectorAll('.quiz-answer');
 
             answers.forEach((answer, index) => {
                 answer.classList.add('disabled');
-                if (index === q.correct) {
+                if (index === correctIndex) {
                     answer.classList.add('correct');
                 } else if (index === selected) {
                     answer.classList.add('incorrect');
                 }
             });
 
-            if (selected === q.correct) {
+            if (selected === correctIndex) {
                 score++;
                 createFireworks();
             } else {
