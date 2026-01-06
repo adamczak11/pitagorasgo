@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zaokrąglanie liczb - Pitagoras Go!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Nawigacja -->
+    <nav class="nav-bar">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <span>←</span>
+                <span>Powrót</span>
+            </a>
+            <div class="nav-logo">
+                <span>📐</span>
+                <span>Pitagoras Go!</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Główna treść -->
+    <main class="container">
+        <div class="content-wrapper">
+            <!-- Tytuł strony -->
+            <div class="page-title">
+                <span class="icon">🎯</span>
+                <h1>Zaokrąglanie liczb</h1>
+            </div>
+
+            <!-- Sekcja teorii -->
+            <section class="section theory">
+                <h2 class="section-title">
+                    <span class="emoji">📚</span>
+                    Teoria
+                </h2>
+
+                <p>
+                    <span class="highlight">Zaokrąglanie</span> to upraszczanie liczby przez zastąpienie jej przybliżoną wartością. Używamy go, gdy nie potrzebujemy dokładnej wartości - np. mówimy "około 100 osób" zamiast "97 osób". Zaokrąglamy do różnych rzędów: dziesiątek, setek, tysięcy lub do określonego miejsca po przecinku.
+                </p>
+
+                <p>
+                    <span class="highlight">Zasada zaokrąglania</span> jest prosta: patrzymy na cyfrę, która stoi ZARAZ PO miejscu, do którego zaokrąglamy. Jeśli ta cyfra to 0, 1, 2, 3 lub 4 - zaokrąglamy W DÓŁ (zostawiamy bez zmian). Jeśli to 5, 6, 7, 8 lub 9 - zaokrąglamy W GÓRĘ (zwiększamy o 1).
+                </p>
+
+                <p>
+                    Przy zaokrąglaniu do <span class="highlight">dziesiątek</span> patrzymy na cyfrę jedności. Np. 47 ≈ 50 (bo 7 ≥ 5), ale 43 ≈ 40 (bo 3 < 5). Przy zaokrąglaniu do <span class="highlight">setek</span> patrzymy na cyfrę dziesiątek. Np. 350 ≈ 400, ale 340 ≈ 300.
+                </p>
+
+                <p>
+                    <span class="highlight">Zaokrąglanie liczb dziesiętnych</span> działa tak samo! Przy zaokrąglaniu do jedności patrzymy na pierwszą cyfrę po przecinku. Np. 3,7 ≈ 4 (bo 7 ≥ 5), ale 3,2 ≈ 3 (bo 2 < 5). Przy zaokrąglaniu do dziesiątych patrzymy na setne: 2,45 ≈ 2,5, ale 2,44 ≈ 2,4.
+                </p>
+
+                <div class="formula">
+                    Cyfry 0-4 → w dół | Cyfry 5-9 → w górę
+                </div>
+            </section>
+
+            <!-- Sekcja przykładów -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="emoji">📝</span>
+                    Przykładowe zadania
+                </h2>
+
+                <div class="examples">
+                    <div class="example-card">
+                        <div class="task">
+                            Zadanie 1: Zaokrąglij 3847 do setek.
+                        </div>
+                        <div class="solution">
+                            <div class="solution-title">Rozwiązanie:</div>
+                            <p>Patrzymy na cyfrę dziesiątek: 4</p>
+                            <p>4 < 5, więc zaokrąglamy W DÓŁ</p>
+                            <p>Odpowiedź: <strong>3847 ≈ 3800</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="task">
+                            Zadanie 2: Zaokrąglij 6,478 do dziesiątych.
+                        </div>
+                        <div class="solution">
+                            <div class="solution-title">Rozwiązanie:</div>
+                            <p>Patrzymy na cyfrę setnych: 7</p>
+                            <p>7 ≥ 5, więc zaokrąglamy W GÓRĘ</p>
+                            <p>Odpowiedź: <strong>6,478 ≈ 6,5</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="task">
+                            Zadanie 3: Zaokrąglij 9950 do tysięcy.
+                        </div>
+                        <div class="solution">
+                            <div class="solution-title">Rozwiązanie:</div>
+                            <p>Patrzymy na cyfrę setek: 9</p>
+                            <p>9 ≥ 5, więc zaokrąglamy W GÓRĘ</p>
+                            <p>9 + 1 = 10, więc przechodzimy do następnego rzędu</p>
+                            <p>Odpowiedź: <strong>9950 ≈ 10000</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="task">
+                            Zadanie 4: Zaokrąglij 2,995 do setnych.
+                        </div>
+                        <div class="solution">
+                            <div class="solution-title">Rozwiązanie:</div>
+                            <p>Patrzymy na cyfrę tysięcznych: 5</p>
+                            <p>5 ≥ 5, więc zaokrąglamy W GÓRĘ</p>
+                            <p>9 + 1 = 10 → przekraczamy, 9 + 1 = 10 → przekraczamy, 2 + 1 = 3</p>
+                            <p>Odpowiedź: <strong>2,995 ≈ 3,00</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sekcja quizów -->
+            <section class="section quiz-section">
+                <h2 class="section-title">
+                    <span class="emoji">🧪</span>
+                    Sprawdź się!
+                </h2>
+                <p>Wybierz poziom trudności i sprawdź swoją wiedzę:</p>
+
+                <div class="quiz-buttons">
+                    <button class="quiz-btn easy" onclick="startQuiz('easy')">ŁATWY</button>
+                    <button class="quiz-btn medium" onclick="startQuiz('medium')">ŚREDNI</button>
+                    <button class="quiz-btn hard" onclick="startQuiz('hard')">TRUDNY</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal quizu -->
+    <div id="quiz-modal" class="quiz-modal">
+        <div class="quiz-container">
+            <span class="quiz-close" onclick="closeQuiz()">&times;</span>
+            <div id="quiz-content"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer container">
+        <p class="school">Społeczna Jedynka im. św. Urszuli Ledóchowskiej w Poznaniu</p>
+        <p class="year">2025</p>
+    </footer>
+
+    <script>
+        // Pytania quizowe - Zaokrąglanie liczb
+        const quizData = {
+            easy: [
+                {
+                    question: "47 zaokrąglone do dziesiątek to:",
+                    answers: ["40", "50", "47", "45"],
+                    correct: 1
+                },
+                {
+                    question: "Jaka cyfra decyduje o zaokrągleniu w górę?",
+                    answers: ["0-4", "1-4", "5-9", "6-9"],
+                    correct: 2
+                },
+                {
+                    question: "123 zaokrąglone do dziesiątek to:",
+                    answers: ["100", "120", "130", "125"],
+                    correct: 1
+                },
+                {
+                    question: "2,7 zaokrąglone do jedności to:",
+                    answers: ["2", "3", "2,5", "2,8"],
+                    correct: 1
+                },
+                {
+                    question: "84 zaokrąglone do dziesiątek to:",
+                    answers: ["80", "90", "85", "84"],
+                    correct: 0
+                }
+            ],
+            medium: [
+                {
+                    question: "3456 zaokrąglone do setek to:",
+                    answers: ["3400", "3500", "3450", "3000"],
+                    correct: 1
+                },
+                {
+                    question: "7,35 zaokrąglone do dziesiątych to:",
+                    answers: ["7,3", "7,4", "7,0", "7,5"],
+                    correct: 1
+                },
+                {
+                    question: "995 zaokrąglone do dziesiątek to:",
+                    answers: ["990", "1000", "995", "900"],
+                    correct: 1
+                },
+                {
+                    question: "4,444 zaokrąglone do setnych to:",
+                    answers: ["4,44", "4,45", "4,4", "4,50"],
+                    correct: 0
+                },
+                {
+                    question: "2850 zaokrąglone do tysięcy to:",
+                    answers: ["2000", "3000", "2800", "2900"],
+                    correct: 1
+                }
+            ],
+            hard: [
+                {
+                    question: "9,995 zaokrąglone do setnych to:",
+                    answers: ["9,99", "10,00", "9,90", "10,10"],
+                    correct: 1
+                },
+                {
+                    question: "14 567 zaokrąglone do tysięcy to:",
+                    answers: ["14 000", "15 000", "14 500", "14 600"],
+                    correct: 1
+                },
+                {
+                    question: "0,0045 zaokrąglone do tysięcznych to:",
+                    answers: ["0,004", "0,005", "0,010", "0,000"],
+                    correct: 1
+                },
+                {
+                    question: "Która liczba po zaokrągleniu do setek daje 500?",
+                    answers: ["449", "551", "467", "549"],
+                    correct: 2
+                },
+                {
+                    question: "3,1415 zaokrąglone do setnych to:",
+                    answers: ["3,14", "3,15", "3,10", "3,142"],
+                    correct: 0
+                }
+            ]
+        };
+
+        // Komentarze do wyników
+        const comments = {
+            5: ["Zaokrąglasz lepiej niż kalkulator! 🏆", "Celnie w dziesiątkę! 🎯", "Perfekcja! 💯"],
+            4: ["Świetna robota! 👏", "Prawie idealnie! 🎯", "Bardzo dobrze! 😎"],
+            3: ["Niezły wynik! 📚", "Dobra robota! 👍", "Idzie ci coraz lepiej! 🚀"],
+            2: ["Przypomnij sobie zasady 📖", "Nie poddawaj się! 💪", "Spróbuj jeszcze raz! 🔄"],
+            1: ["Wróć do teorii 📚", "Każdy kiedyś zaczynał! 🌱", "Nie rezygnuj! 💪"],
+            0: ["Czas na powtórkę! 📖", "Teoria czeka! 📚", "Spróbuj ponownie! 🎯"]
+        };
+
+        let currentQuiz = [];
+        let currentQuestion = 0;
+        let score = 0;
+
+        function startQuiz(level) {
+            currentQuiz = [...quizData[level]];
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz-modal').classList.add('active');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = currentQuiz[currentQuestion];
+            const progress = ((currentQuestion) / currentQuiz.length) * 100;
+
+            let html = `
+                <div class="quiz-progress">
+                    Pytanie ${currentQuestion + 1} z ${currentQuiz.length}
+                    <div class="quiz-progress-bar">
+                        <div class="quiz-progress-fill" style="width: ${progress}%"></div>
+                    </div>
+                </div>
+                <div class="quiz-question">${q.question}</div>
+                <div class="quiz-answers">
+            `;
+
+            q.answers.forEach((answer, index) => {
+                html += `<div class="quiz-answer" onclick="checkAnswer(${index})">${answer}</div>`;
+            });
+
+            html += '</div>';
+            document.getElementById('quiz-content').innerHTML = html;
+        }
+
+        function checkAnswer(selected) {
+            const q = currentQuiz[currentQuestion];
+            const answers = document.querySelectorAll('.quiz-answer');
+
+            answers.forEach((answer, index) => {
+                answer.classList.add('disabled');
+                if (index === q.correct) {
+                    answer.classList.add('correct');
+                } else if (index === selected) {
+                    answer.classList.add('incorrect');
+                }
+            });
+
+            if (selected === q.correct) {
+                score++;
+            }
+
+            setTimeout(() => {
+                currentQuestion++;
+                if (currentQuestion < currentQuiz.length) {
+                    showQuestion();
+                } else {
+                    showResult();
+                }
+            }, 1000);
+        }
+
+        function showResult() {
+            const commentList = comments[score];
+            const comment = commentList[Math.floor(Math.random() * commentList.length)];
+
+            let emoji = score === 5 ? "🏆" : score >= 3 ? "😊" : "📚";
+
+            document.getElementById('quiz-content').innerHTML = `
+                <div class="quiz-result">
+                    <div class="score">${score}/5 ${emoji}</div>
+                    <div class="comment">${comment}</div>
+                    <button class="retry-btn" onclick="closeQuiz()">Zamknij</button>
+                </div>
+            `;
+        }
+
+        function closeQuiz() {
+            document.getElementById('quiz-modal').classList.remove('active');
+        }
+
+        document.getElementById('quiz-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeQuiz();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeQuiz();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Układ współrzędnych - Pitagoras Go!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Nawigacja -->
+    <nav class="nav-bar">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <span>←</span>
+                <span>Powrót</span>
+            </a>
+            <div class="nav-logo">
+                <span>📐</span>
+                <span>Pitagoras Go!</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Główna treść -->
+    <main class="container">
+        <div class="content-wrapper">
+            <!-- Tytuł strony -->
+            <div class="page-title">
+                <span class="icon">📍</span>
+                <h1>Układ współrzędnych</h1>
+            </div>
+
+            <!-- Sekcja teorii -->
+            <section class="section theory">
+                <h2 class="section-title">
+                    <span class="emoji">📚</span>
+                    Teoria
+                </h2>
+
+                <p>
+                    <span class="highlight">Układ współrzędnych</span> (zwany też układem kartezjańskim) to sposób określania położenia punktów na płaszczyźnie za pomocą dwóch liczb. Wyobraź sobie, że chcesz opisać koledze, gdzie dokładnie na mapie znajduje się jakieś miejsce - właśnie do tego służą współrzędne!
+                </p>
+
+                <p>
+                    Układ składa się z dwóch prostopadłych osi liczbowych, które przecinają się w punkcie zwanym <span class="highlight">początkiem układu współrzędnych</span>, oznaczanym literą O. Oś pozioma to <span class="highlight">oś X</span> (oś odciętych), a oś pionowa to <span class="highlight">oś Y</span> (oś rzędnych). Osie dzielą płaszczyznę na cztery części zwane ćwiartkami.
+                </p>
+
+                <p>
+                    Każdy punkt na płaszczyźnie opisujemy parą liczb <span class="highlight">(x, y)</span>, gdzie pierwsza liczba (x) mówi, jak daleko w prawo lub lewo od początku układu znajduje się punkt, a druga liczba (y) - jak daleko w górę lub w dół. Na przykład punkt A(3, 2) znajduje się 3 jednostki w prawo i 2 jednostki w górę od punktu O.
+                </p>
+
+                <p>
+                    <span class="highlight">Ćwiartki układu współrzędnych</span> numerujemy od I do IV, zaczynając od prawej górnej i idąc przeciwnie do ruchu wskazówek zegara. W I ćwiartce obie współrzędne są dodatnie (+, +), w II ćwiartce x jest ujemny, a y dodatni (-, +), w III ćwiartce obie są ujemne (-, -), a w IV ćwiartce x jest dodatni, a y ujemny (+, -).
+                </p>
+
+                <div class="formula">
+                    Punkt P(x, y) → x = odcięta, y = rzędna
+                </div>
+            </section>
+
+            <!-- Sekcja przykładów -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="emoji">📝</span>
+                    Przykładowe zadania
+                </h2>
+
+                <div class="examples">
+                    <div class="example-card">
+                        <div class="task">
+                            Zadanie 1: W której ćwiartce leży punkt A(-3, 5)?
+                        </div>
+                        <div class="solution">
+                            <div class="solution-title">Rozwiązanie:</div>
+                            <p>Punkt A(-3, 5) ma współrzędną x = -3 (ujemną) i y = 5 (dodatnią).</p>
+                            <p>Kombinacja (-, +) odpowiada <strong>II ćwiartce</strong>.</p>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="task">
+                            Zadanie 2: Podaj współrzędne punktu symetrycznego do A(4, -2) względem osi X.
+                        </div>
+                        <div class="solution">
+                            <div class="solution-title">Rozwiązanie:</div>
+                            <p>Przy symetrii względem osi X współrzędna x pozostaje ta sama, a współrzędna y zmienia znak na przeciwny.</p>
+                            <p>Punkt symetryczny: <strong>A'(4, 2)</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="task">
+                            Zadanie 3: Oblicz odległość punktu B(3, 4) od początku układu współrzędnych.
+                        </div>
+                        <div class="solution">
+                            <div class="solution-title">Rozwiązanie:</div>
+                            <p>Używamy twierdzenia Pitagorasa: d = √(x² + y²)</p>
+                            <p>d = √(3² + 4²) = √(9 + 16) = √25 = <strong>5</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="task">
+                            Zadanie 4: Punkt P leży na osi Y i ma rzędną równą -7. Podaj jego współrzędne.
+                        </div>
+                        <div class="solution">
+                            <div class="solution-title">Rozwiązanie:</div>
+                            <p>Każdy punkt leżący na osi Y ma odciętą (współrzędną x) równą 0.</p>
+                            <p>Współrzędne punktu P: <strong>(0, -7)</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sekcja quizów -->
+            <section class="section quiz-section">
+                <h2 class="section-title">
+                    <span class="emoji">🧪</span>
+                    Sprawdź się!
+                </h2>
+                <p>Wybierz poziom trudności i sprawdź swoją wiedzę:</p>
+
+                <div class="quiz-buttons">
+                    <button class="quiz-btn easy" onclick="startQuiz('easy')">ŁATWY</button>
+                    <button class="quiz-btn medium" onclick="startQuiz('medium')">ŚREDNI</button>
+                    <button class="quiz-btn hard" onclick="startQuiz('hard')">TRUDNY</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal quizu -->
+    <div id="quiz-modal" class="quiz-modal">
+        <div class="quiz-container">
+            <span class="quiz-close" onclick="closeQuiz()">&times;</span>
+            <div id="quiz-content"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer container">
+        <p class="school">Społeczna Jedynka im. św. Urszuli Ledóchowskiej w Poznaniu</p>
+        <p class="year">2025</p>
+    </footer>
+
+    <script>
+        // Pytania quizowe - Układ współrzędnych
+        const quizData = {
+            easy: [
+                {
+                    question: "Jak nazywa się pozioma oś w układzie współrzędnych?",
+                    answers: ["Oś X (oś odciętych)", "Oś Y (oś rzędnych)", "Oś Z", "Oś główna"],
+                    correct: 0
+                },
+                {
+                    question: "Ile ćwiartek ma układ współrzędnych?",
+                    answers: ["2", "3", "4", "6"],
+                    correct: 2
+                },
+                {
+                    question: "Jak oznaczamy początek układu współrzędnych?",
+                    answers: ["P", "A", "O", "X"],
+                    correct: 2
+                },
+                {
+                    question: "Jakie współrzędne ma punkt leżący na przecięciu osi?",
+                    answers: ["(1, 1)", "(0, 0)", "(-1, -1)", "(0, 1)"],
+                    correct: 1
+                },
+                {
+                    question: "W zapisie P(x, y), która wartość jest odciętą?",
+                    answers: ["y", "x", "Obie", "Żadna"],
+                    correct: 1
+                }
+            ],
+            medium: [
+                {
+                    question: "W której ćwiartce leży punkt A(3, -2)?",
+                    answers: ["I ćwiartka", "II ćwiartka", "III ćwiartka", "IV ćwiartka"],
+                    correct: 3
+                },
+                {
+                    question: "Jakie znaki mają współrzędne punktów w III ćwiartce?",
+                    answers: ["(+, +)", "(-, +)", "(-, -)", "(+, -)"],
+                    correct: 2
+                },
+                {
+                    question: "Punkt B(-5, 0) leży na:",
+                    answers: ["Osi X", "Osi Y", "W I ćwiartce", "W III ćwiartce"],
+                    correct: 0
+                },
+                {
+                    question: "Która ćwiartka jest numerowana jako pierwsza?",
+                    answers: ["Lewa górna", "Prawa górna", "Lewa dolna", "Prawa dolna"],
+                    correct: 1
+                },
+                {
+                    question: "Punkt symetryczny do A(2, 3) względem osi Y to:",
+                    answers: ["(-2, 3)", "(2, -3)", "(-2, -3)", "(3, 2)"],
+                    correct: 0
+                }
+            ],
+            hard: [
+                {
+                    question: "Odległość punktu A(3, 4) od początku układu wynosi:",
+                    answers: ["7", "5", "12", "25"],
+                    correct: 1
+                },
+                {
+                    question: "Punkt symetryczny do B(-2, 5) względem początku układu to:",
+                    answers: ["(2, 5)", "(-2, -5)", "(2, -5)", "(5, -2)"],
+                    correct: 2
+                },
+                {
+                    question: "Środek odcinka AB, gdzie A(2, 4) i B(6, 8), ma współrzędne:",
+                    answers: ["(4, 6)", "(8, 12)", "(4, 4)", "(3, 6)"],
+                    correct: 0
+                },
+                {
+                    question: "Punkt C(0, -4) jest oddalony od punktu D(3, 0) o:",
+                    answers: ["7", "4", "5", "3"],
+                    correct: 2
+                },
+                {
+                    question: "Jeśli punkt P(a, b) leży w II ćwiartce, to punkt Q(-a, -b) leży w:",
+                    answers: ["I ćwiartce", "II ćwiartce", "III ćwiartce", "IV ćwiartce"],
+                    correct: 3
+                }
+            ]
+        };
+
+        // Komentarze do wyników
+        const comments = {
+            5: ["Mistrz współrzędnych! 🏆", "Pitagoras byłby dumny! 🌟", "Perfekcyjnie! 💯"],
+            4: ["Świetna robota! 👏", "Prawie idealnie! 🎯", "Bardzo dobrze! 😎"],
+            3: ["Nieźle! Jeszcze trochę praktyki 📚", "Dobry wynik! 👍", "Na dobrej drodze! 🚀"],
+            2: ["Warto powtórzyć teorię 📖", "Nie poddawaj się! 💪", "Spróbuj jeszcze raz! 🔄"],
+            1: ["Przeczytaj jeszcze raz teorię 📚", "Każdy mistrz kiedyś zaczynał! 🌱", "Do dzieła! 💪"],
+            0: ["Czas na naukę! 📖", "Teoria czeka na Ciebie! 📚", "Nie martw się, spróbuj jeszcze raz! 🎯"]
+        };
+
+        let currentQuiz = [];
+        let currentQuestion = 0;
+        let score = 0;
+
+        function startQuiz(level) {
+            currentQuiz = [...quizData[level]];
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz-modal').classList.add('active');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = currentQuiz[currentQuestion];
+            const progress = ((currentQuestion) / currentQuiz.length) * 100;
+
+            let html = `
+                <div class="quiz-progress">
+                    Pytanie ${currentQuestion + 1} z ${currentQuiz.length}
+                    <div class="quiz-progress-bar">
+                        <div class="quiz-progress-fill" style="width: ${progress}%"></div>
+                    </div>
+                </div>
+                <div class="quiz-question">${q.question}</div>
+                <div class="quiz-answers">
+            `;
+
+            q.answers.forEach((answer, index) => {
+                html += `<div class="quiz-answer" onclick="checkAnswer(${index})">${answer}</div>`;
+            });
+
+            html += '</div>';
+            document.getElementById('quiz-content').innerHTML = html;
+        }
+
+        function checkAnswer(selected) {
+            const q = currentQuiz[currentQuestion];
+            const answers = document.querySelectorAll('.quiz-answer');
+
+            answers.forEach((answer, index) => {
+                answer.classList.add('disabled');
+                if (index === q.correct) {
+                    answer.classList.add('correct');
+                } else if (index === selected) {
+                    answer.classList.add('incorrect');
+                }
+            });
+
+            if (selected === q.correct) {
+                score++;
+            }
+
+            setTimeout(() => {
+                currentQuestion++;
+                if (currentQuestion < currentQuiz.length) {
+                    showQuestion();
+                } else {
+                    showResult();
+                }
+            }, 1000);
+        }
+
+        function showResult() {
+            const commentList = comments[score];
+            const comment = commentList[Math.floor(Math.random() * commentList.length)];
+
+            let emoji = score === 5 ? "🏆" : score >= 3 ? "😊" : "📚";
+
+            document.getElementById('quiz-content').innerHTML = `
+                <div class="quiz-result">
+                    <div class="score">${score}/5 ${emoji}</div>
+                    <div class="comment">${comment}</div>
+                    <button class="retry-btn" onclick="closeQuiz()">Zamknij</button>
+                </div>
+            `;
+        }
+
+        function closeQuiz() {
+            document.getElementById('quiz-modal').classList.remove('active');
+        }
+
+        // Zamknij modal klikając poza nim
+        document.getElementById('quiz-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeQuiz();
+            }
+        });
+
+        // Zamknij modal klawiszem Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeQuiz();
+            }
+        });
+    </script>
+</body>
+</html>

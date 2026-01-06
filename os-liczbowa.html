@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oś liczbowa - Pitagoras Go!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Nawigacja -->
+    <nav class="nav-bar">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <span>←</span>
+                <span>Powrót</span>
+            </a>
+            <div class="nav-logo">
+                <span>📐</span>
+                <span>Pitagoras Go!</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Główna treść -->
+    <main class="container">
+        <div class="content-wrapper">
+            <!-- Tytuł strony -->
+            <div class="page-title">
+                <span class="icon">↔️</span>
+                <h1>Oś liczbowa</h1>
+            </div>
+
+            <!-- Sekcja teorii -->
+            <section class="section theory">
+                <h2 class="section-title">
+                    <span class="emoji">📚</span>
+                    Teoria
+                </h2>
+
+                <p>
+                    <span class="highlight">Oś liczbowa</span> to prosta, na której zaznaczamy liczby w określonym porządku. Każdej liczbie odpowiada dokładnie jeden punkt na osi, a każdemu punktowi - dokładnie jedna liczba. To jak nieskończona linijka, która rozciąga się w obie strony!
+                </p>
+
+                <p>
+                    Na osi liczbowej wyróżniamy punkt <span class="highlight">zero</span>, który dzieli oś na dwie części: po prawej stronie znajdują się <span class="highlight">liczby dodatnie</span> (coraz większe), a po lewej - <span class="highlight">liczby ujemne</span> (coraz mniejsze). Im bardziej na prawo, tym liczba jest większa!
+                </p>
+
+                <p>
+                    Na osi możemy zaznaczać nie tylko liczby całkowite, ale też <span class="highlight">ułamki</span> i <span class="highlight">liczby dziesiętne</span>. Na przykład 1,5 (czyli 1½) znajduje się dokładnie w połowie drogi między 1 a 2. Liczba -2,5 leży w połowie między -2 a -3.
+                </p>
+
+                <p>
+                    <span class="highlight">Wartość bezwzględna</span> liczby to jej odległość od zera na osi liczbowej. Oznaczamy ją pionowymi kreskami: |x|. Na przykład |-5| = 5 i |5| = 5, bo obie liczby są oddalone od zera o 5 jednostek. Wartość bezwzględna jest zawsze nieujemna!
+                </p>
+
+                <div class="formula">
+                    |a| = a dla a ≥ 0 oraz |a| = -a dla a < 0
+                </div>
+            </section>
+
+            <!-- Sekcja przykładów -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="emoji">📝</span>
+                    Przykładowe zadania
+                </h2>
+
+                <div class="examples">
+                    <div class="example-card">
+                        <div class="task">
+                            Zadanie 1: Uporządkuj liczby od najmniejszej do największej: 3, -5, 0, -2, 4
+                        </div>
+                        <div class="solution">
+                            <div class="solution-title">Rozwiązanie:</div>
+                            <p>Na osi liczbowej liczby rosną od lewej do prawej.</p>
+                            <p>Odpowiedź: <strong>-5, -2, 0, 3, 4</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="task">
+                            Zadanie 2: Oblicz wartość bezwzględną: |-7| i |3|
+                        </div>
+                        <div class="solution">
+                            <div class="solution-title">Rozwiązanie:</div>
+                            <p>|-7| = 7 (odległość -7 od zera wynosi 7)</p>
+                            <p>|3| = 3 (odległość 3 od zera wynosi 3)</p>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="task">
+                            Zadanie 3: Która liczba leży na osi liczbowej między -1,5 a -0,5?
+                        </div>
+                        <div class="solution">
+                            <div class="solution-title">Rozwiązanie:</div>
+                            <p>Między -1,5 a -0,5 leży np. <strong>-1</strong> (ale też -1,2, -0,8 itd.)</p>
+                            <p>Liczba całkowita to: <strong>-1</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="task">
+                            Zadanie 4: Znajdź liczbę przeciwną do 8 i oblicz sumę tej liczby z jej liczbą przeciwną.
+                        </div>
+                        <div class="solution">
+                            <div class="solution-title">Rozwiązanie:</div>
+                            <p>Liczba przeciwna do 8 to <strong>-8</strong></p>
+                            <p>Suma: 8 + (-8) = <strong>0</strong></p>
+                            <p>(Suma liczby i jej liczby przeciwnej zawsze wynosi 0!)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sekcja quizów -->
+            <section class="section quiz-section">
+                <h2 class="section-title">
+                    <span class="emoji">🧪</span>
+                    Sprawdź się!
+                </h2>
+                <p>Wybierz poziom trudności i sprawdź swoją wiedzę:</p>
+
+                <div class="quiz-buttons">
+                    <button class="quiz-btn easy" onclick="startQuiz('easy')">ŁATWY</button>
+                    <button class="quiz-btn medium" onclick="startQuiz('medium')">ŚREDNI</button>
+                    <button class="quiz-btn hard" onclick="startQuiz('hard')">TRUDNY</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal quizu -->
+    <div id="quiz-modal" class="quiz-modal">
+        <div class="quiz-container">
+            <span class="quiz-close" onclick="closeQuiz()">&times;</span>
+            <div id="quiz-content"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer container">
+        <p class="school">Społeczna Jedynka im. św. Urszuli Ledóchowskiej w Poznaniu</p>
+        <p class="year">2025</p>
+    </footer>
+
+    <script>
+        // Pytania quizowe - Oś liczbowa
+        const quizData = {
+            easy: [
+                {
+                    question: "Która liczba jest większa: -3 czy -7?",
+                    answers: ["-7", "-3", "Są równe", "Nie można porównać"],
+                    correct: 1
+                },
+                {
+                    question: "Ile wynosi |-4|?",
+                    answers: ["-4", "4", "0", "-1"],
+                    correct: 1
+                },
+                {
+                    question: "Po której stronie zera leżą liczby dodatnie?",
+                    answers: ["Po lewej", "Po prawej", "Na górze", "Na dole"],
+                    correct: 1
+                },
+                {
+                    question: "Jaka jest liczba przeciwna do 5?",
+                    answers: ["5", "0", "-5", "1/5"],
+                    correct: 2
+                },
+                {
+                    question: "Która liczba leży bliżej zera: -2 czy 3?",
+                    answers: ["-2", "3", "Tak samo blisko", "Nie można określić"],
+                    correct: 0
+                }
+            ],
+            medium: [
+                {
+                    question: "Uporządkuj rosnąco: -3, 1, -1, 0",
+                    answers: ["-3, -1, 0, 1", "1, 0, -1, -3", "-1, -3, 0, 1", "0, -1, 1, -3"],
+                    correct: 0
+                },
+                {
+                    question: "Ile wynosi |−8| + |3|?",
+                    answers: ["5", "11", "-5", "-11"],
+                    correct: 1
+                },
+                {
+                    question: "Która liczba leży między -2,5 a -1,5?",
+                    answers: ["-3", "-1", "-2", "0"],
+                    correct: 2
+                },
+                {
+                    question: "Suma liczby i jej liczby przeciwnej wynosi:",
+                    answers: ["1", "-1", "0", "2 razy ta liczba"],
+                    correct: 2
+                },
+                {
+                    question: "Która nierówność jest prawdziwa?",
+                    answers: ["-5 > -2", "-5 < -2", "-5 = -2", "-5 > 2"],
+                    correct: 1
+                }
+            ],
+            hard: [
+                {
+                    question: "Ile wynosi |−3| − |−7|?",
+                    answers: ["4", "-4", "10", "-10"],
+                    correct: 1
+                },
+                {
+                    question: "Dla jakiego x: |x| = 6?",
+                    answers: ["x = 6", "x = -6", "x = 6 lub x = -6", "Nie ma takiego x"],
+                    correct: 2
+                },
+                {
+                    question: "Jeśli |a| = |b| i a ≠ b, to:",
+                    answers: ["a = -b", "a = b", "a + b = 1", "a · b = 1"],
+                    correct: 0
+                },
+                {
+                    question: "Ile liczb całkowitych leży między -3,5 a 2,5?",
+                    answers: ["5", "6", "7", "4"],
+                    correct: 1
+                },
+                {
+                    question: "Oblicz: |−2| · |−3| − |−1|",
+                    answers: ["5", "6", "7", "4"],
+                    correct: 0
+                }
+            ]
+        };
+
+        // Komentarze do wyników
+        const comments = {
+            5: ["Jesteś numerem 1! 🥇", "Oś liczbowa nie ma przed tobą tajemnic! 🌟", "Perfekcja! 💯"],
+            4: ["Świetna robota! 👏", "Prawie na szczycie! 🎯", "Bardzo dobrze! 😎"],
+            3: ["Solidny wynik! 📚", "Dobry wynik! 👍", "Idzie ci coraz lepiej! 🚀"],
+            2: ["Warto powtórzyć materiał 📖", "Nie poddawaj się! 💪", "Jeszcze raz! 🔄"],
+            1: ["Przeczytaj teorię jeszcze raz 📚", "Każdy kiedyś zaczynał! 🌱", "Do dzieła! 💪"],
+            0: ["Czas wrócić do podstaw! 📖", "Teoria czeka! 📚", "Spróbuj ponownie! 🎯"]
+        };
+
+        let currentQuiz = [];
+        let currentQuestion = 0;
+        let score = 0;
+
+        function startQuiz(level) {
+            currentQuiz = [...quizData[level]];
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz-modal').classList.add('active');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = currentQuiz[currentQuestion];
+            const progress = ((currentQuestion) / currentQuiz.length) * 100;
+
+            let html = `
+                <div class="quiz-progress">
+                    Pytanie ${currentQuestion + 1} z ${currentQuiz.length}
+                    <div class="quiz-progress-bar">
+                        <div class="quiz-progress-fill" style="width: ${progress}%"></div>
+                    </div>
+                </div>
+                <div class="quiz-question">${q.question}</div>
+                <div class="quiz-answers">
+            `;
+
+            q.answers.forEach((answer, index) => {
+                html += `<div class="quiz-answer" onclick="checkAnswer(${index})">${answer}</div>`;
+            });
+
+            html += '</div>';
+            document.getElementById('quiz-content').innerHTML = html;
+        }
+
+        function checkAnswer(selected) {
+            const q = currentQuiz[currentQuestion];
+            const answers = document.querySelectorAll('.quiz-answer');
+
+            answers.forEach((answer, index) => {
+                answer.classList.add('disabled');
+                if (index === q.correct) {
+                    answer.classList.add('correct');
+                } else if (index === selected) {
+                    answer.classList.add('incorrect');
+                }
+            });
+
+            if (selected === q.correct) {
+                score++;
+            }
+
+            setTimeout(() => {
+                currentQuestion++;
+                if (currentQuestion < currentQuiz.length) {
+                    showQuestion();
+                } else {
+                    showResult();
+                }
+            }, 1000);
+        }
+
+        function showResult() {
+            const commentList = comments[score];
+            const comment = commentList[Math.floor(Math.random() * commentList.length)];
+
+            let emoji = score === 5 ? "🏆" : score >= 3 ? "😊" : "📚";
+
+            document.getElementById('quiz-content').innerHTML = `
+                <div class="quiz-result">
+                    <div class="score">${score}/5 ${emoji}</div>
+                    <div class="comment">${comment}</div>
+                    <button class="retry-btn" onclick="closeQuiz()">Zamknij</button>
+                </div>
+            `;
+        }
+
+        function closeQuiz() {
+            document.getElementById('quiz-modal').classList.remove('active');
+        }
+
+        document.getElementById('quiz-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeQuiz();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeQuiz();
+            }
+        });
+    </script>
+</body>
+</html>

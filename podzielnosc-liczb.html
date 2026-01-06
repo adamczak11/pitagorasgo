@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podzielność liczb - Pitagoras Go!</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Nawigacja -->
+    <nav class="nav-bar">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <span>←</span>
+                <span>Powrót</span>
+            </a>
+            <div class="nav-logo">
+                <span>📐</span>
+                <span>Pitagoras Go!</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Główna treść -->
+    <main class="container">
+        <div class="content-wrapper">
+            <!-- Tytuł strony -->
+            <div class="page-title">
+                <span class="icon">➗</span>
+                <h1>Podzielność liczb</h1>
+            </div>
+
+            <!-- Sekcja teorii -->
+            <section class="section theory">
+                <h2 class="section-title">
+                    <span class="emoji">📚</span>
+                    Teoria i zasady
+                </h2>
+
+                <p>
+                    Liczba <span class="highlight">a jest podzielna przez b</span>, gdy wynik dzielenia a : b jest liczbą całkowitą. Zamiast dzielić każdą liczbę, możemy użyć sprytnych cech podzielności!
+                </p>
+
+                <div class="example-card" style="border-left: 4px solid var(--accent-podzielnosc);">
+                    <div class="task">Najważniejsze cechy podzielności:</div>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 1rem;">🔹 <strong>Przez 2:</strong> Liczba jest parzysta (kończy się na 0, 2, 4, 6 lub 8).</li>
+                        <li style="margin-bottom: 1rem;">🔹 <strong>Przez 3:</strong> Suma cyfr liczby jest podzielna przez 3. <br><small>Przykład: 123 (1+2+3=6, 6 dzieli się przez 3, więc 123 też).</small></li>
+                        <li style="margin-bottom: 1rem;">🔹 <strong>Przez 5:</strong> Ostatnią cyfrą jest 0 lub 5.</li>
+                        <li style="margin-bottom: 1rem;">🔹 <strong>Przez 9:</strong> Suma cyfr liczby jest podzielna przez 9. <br><small>Przykład: 729 (7+2+9=18, 18 dzieli się przez 9, więc 729 też).</small></li>
+                        <li style="margin-bottom: 1rem;">🔹 <strong>Przez 10:</strong> Ostatnią cyfrą jest 0.</li>
+                    </ul>
+                </div>
+
+                <p>
+                    <span class="highlight">Liczba pierwsza</span> ma dokładnie dwa dzielniki: 1 i samą siebie (np. 2, 3, 5, 7, 11...). <span class="highlight">Liczba złożona</span> ma więcej niż dwa dzielniki.
+                </p>
+
+                <p>
+                    <span class="highlight">NWD</span> to Największy Wspólny Dzielnik, a <span class="highlight">NWW</span> to Najmniejsza Wspólna Wielokrotność.
+                </p>
+
+                <div class="formula">
+                    NWD(a,b) · NWW(a,b) = a · b
+                </div>
+            </section>
+
+            <!-- Sekcja przykładów -->
+            <section class="section">
+                <h2 class="section-title">
+                    <span class="emoji">📝</span>
+                    Przykładowe zadania
+                </h2>
+
+                <div class="examples">
+                    <div class="example-card">
+                        <div class="task">
+                            Zadanie 1: Znajdź wszystkie dzielniki liczby 18.
+                        </div>
+                        <div class="solution">
+                            <div class="solution-title">Rozwiązanie:</div>
+                            <p>Sprawdzamy, przez jakie liczby 18 dzieli się bez reszty:</p>
+                            <p>18:1=18 ✓, 18:2=9 ✓, 18:3=6 ✓, 18:6=3 ✓, 18:9=2 ✓, 18:18=1 ✓</p>
+                            <p>Dzielniki 18: <strong>1, 2, 3, 6, 9, 18</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="task">
+                            Zadanie 2: Oblicz NWD(12, 18) i NWW(12, 18).
+                        </div>
+                        <div class="solution">
+                            <div class="solution-title">Rozwiązanie:</div>
+                            <p>Dzielniki 12: 1, 2, 3, 4, 6, 12</p>
+                            <p>Dzielniki 18: 1, 2, 3, 6, 9, 18</p>
+                            <p>Wspólne dzielniki: 1, 2, 3, 6 → <strong>NWD(12,18) = 6</strong></p>
+                            <p>NWW = (12 · 18) : 6 = 216 : 6 = <strong>36</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="task">
+                            Zadanie 3: Rozłóż liczbę 60 na czynniki pierwsze.
+                        </div>
+                        <div class="solution">
+                            <div class="solution-title">Rozwiązanie:</div>
+                            <p>60 = 2 · 30 = 2 · 2 · 15 = 2 · 2 · 3 · 5</p>
+                            <p>Odpowiedź: <strong>60 = 2² · 3 · 5</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="example-card">
+                        <div class="task">
+                            Zadanie 4: Czy 91 jest liczbą pierwszą?
+                        </div>
+                        <div class="solution">
+                            <div class="solution-title">Rozwiązanie:</div>
+                            <p>Sprawdzamy podzielność przez liczby pierwsze: 2, 3, 5, 7...</p>
+                            <p>91 : 7 = 13 (dzieli się!)</p>
+                            <p>91 = 7 · 13, więc <strong>91 NIE jest liczbą pierwszą</strong> (jest złożona)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sekcja quizów -->
+            <section class="section quiz-section">
+                <h2 class="section-title">
+                    <span class="emoji">🧪</span>
+                    Sprawdź się!
+                </h2>
+                <p>Wybierz poziom trudności i sprawdź swoją wiedzę:</p>
+
+                <div class="quiz-buttons">
+                    <button class="quiz-btn easy" onclick="startQuiz('easy')">ŁATWY</button>
+                    <button class="quiz-btn medium" onclick="startQuiz('medium')">ŚREDNI</button>
+                    <button class="quiz-btn hard" onclick="startQuiz('hard')">TRUDNY</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal quizu -->
+    <div id="quiz-modal" class="quiz-modal">
+        <div class="quiz-container">
+            <span class="quiz-close" onclick="closeQuiz()">&times;</span>
+            <div id="quiz-content"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer container">
+        <p class="school">Społeczna Jedynka im. św. Urszuli Ledóchowskiej w Poznaniu</p>
+        <p class="year">2025</p>
+    </footer>
+
+    <script>
+        // Pytania quizowe - Podzielność liczb
+        const quizData = {
+            easy: [
+                {
+                    question: "Która liczba jest dzielnikiem 20?",
+                    answers: ["3", "6", "5", "7"],
+                    correct: 2
+                },
+                {
+                    question: "Która liczba jest wielokrotnością 4?",
+                    answers: ["10", "14", "16", "18"],
+                    correct: 2
+                },
+                {
+                    question: "Ile dzielników ma liczba pierwsza?",
+                    answers: ["1", "2", "3", "Wiele"],
+                    correct: 1
+                },
+                {
+                    question: "Która z tych liczb jest pierwsza?",
+                    answers: ["9", "15", "17", "21"],
+                    correct: 2
+                },
+                {
+                    question: "Czy 1 jest liczbą pierwszą?",
+                    answers: ["Tak", "Nie", "Czasami", "To zależy"],
+                    correct: 1
+                }
+            ],
+            medium: [
+                {
+                    question: "Ile dzielników ma liczba 12?",
+                    answers: ["4", "5", "6", "7"],
+                    correct: 2
+                },
+                {
+                    question: "NWD(8, 12) = ?",
+                    answers: ["2", "4", "6", "24"],
+                    correct: 1
+                },
+                {
+                    question: "NWW(4, 6) = ?",
+                    answers: ["2", "12", "24", "10"],
+                    correct: 1
+                },
+                {
+                    question: "Rozkład 24 na czynniki pierwsze to:",
+                    answers: ["2·12", "2³·3", "4·6", "8·3"],
+                    correct: 1
+                },
+                {
+                    question: "Która para liczb jest względnie pierwsza (NWD=1)?",
+                    answers: ["4 i 6", "9 i 12", "8 i 15", "10 i 25"],
+                    correct: 2
+                }
+            ],
+            hard: [
+                {
+                    question: "NWD(48, 36) = ?",
+                    answers: ["6", "12", "18", "24"],
+                    correct: 1
+                },
+                {
+                    question: "NWW(15, 20) = ?",
+                    answers: ["30", "45", "60", "300"],
+                    correct: 2
+                },
+                {
+                    question: "Jeśli NWD(a,b)=6 i a·b=180, to NWW(a,b)=?",
+                    answers: ["30", "36", "15", "1080"],
+                    correct: 0
+                },
+                {
+                    question: "Ile jest liczb pierwszych mniejszych od 20?",
+                    answers: ["6", "7", "8", "9"],
+                    correct: 2
+                },
+                {
+                    question: "Suma wszystkich dzielników 28 (oprócz 28) wynosi:",
+                    answers: ["14", "28", "56", "27"],
+                    correct: 1
+                }
+            ]
+        };
+
+        // Komentarze do wyników
+        const comments = {
+            5: ["Dzielisz wszystko na czynniki pierwsze! 🏆", "Mistrz podzielności! 🌟", "NWD i NWW nie mają tajemnic! 💯"],
+            4: ["Świetna robota! 👏", "Prawie perfekcyjnie! 🎯", "Bardzo dobrze! 😎"],
+            3: ["Dobry wynik! 📚", "Idzie ci coraz lepiej! 👍", "Na dobrej drodze! 🚀"],
+            2: ["Powtórz cechy podzielności 📖", "Nie poddawaj się! 💪", "Spróbuj jeszcze raz! 🔄"],
+            1: ["Wróć do teorii 📚", "Każdy kiedyś zaczynał! 🌱", "Do dzieła! 💪"],
+            0: ["Czas na naukę od podstaw! 📖", "Teoria czeka! 📚", "Nie martw się, spróbuj jeszcze! 🎯"]
+        };
+
+        let currentQuiz = [];
+        let currentQuestion = 0;
+        let score = 0;
+
+        function startQuiz(level) {
+            currentQuiz = [...quizData[level]];
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz-modal').classList.add('active');
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const q = currentQuiz[currentQuestion];
+            const progress = ((currentQuestion) / currentQuiz.length) * 100;
+
+            let html = `
+                <div class="quiz-progress">
+                    Pytanie ${currentQuestion + 1} z ${currentQuiz.length}
+                    <div class="quiz-progress-bar">
+                        <div class="quiz-progress-fill" style="width: ${progress}%"></div>
+                    </div>
+                </div>
+                <div class="quiz-question">${q.question}</div>
+                <div class="quiz-answers">
+            `;
+
+            q.answers.forEach((answer, index) => {
+                html += `<div class="quiz-answer" onclick="checkAnswer(${index})">${answer}</div>`;
+            });
+
+            html += '</div>';
+            document.getElementById('quiz-content').innerHTML = html;
+        }
+
+        function checkAnswer(selected) {
+            const q = currentQuiz[currentQuestion];
+            const answers = document.querySelectorAll('.quiz-answer');
+
+            answers.forEach((answer, index) => {
+                answer.classList.add('disabled');
+                if (index === q.correct) {
+                    answer.classList.add('correct');
+                } else if (index === selected) {
+                    answer.classList.add('incorrect');
+                }
+            });
+
+            if (selected === q.correct) {
+                score++;
+            }
+
+            setTimeout(() => {
+                currentQuestion++;
+                if (currentQuestion < currentQuiz.length) {
+                    showQuestion();
+                } else {
+                    showResult();
+                }
+            }, 1000);
+        }
+
+        function showResult() {
+            const commentList = comments[score];
+            const comment = commentList[Math.floor(Math.random() * commentList.length)];
+
+            let emoji = score === 5 ? "🏆" : score >= 3 ? "😊" : "📚";
+
+            document.getElementById('quiz-content').innerHTML = `
+                <div class="quiz-result">
+                    <div class="score">${score}/5 ${emoji}</div>
+                    <div class="comment">${comment}</div>
+                    <button class="retry-btn" onclick="closeQuiz()">Zamknij</button>
+                </div>
+            `;
+        }
+
+        function closeQuiz() {
+            document.getElementById('quiz-modal').classList.remove('active');
+        }
+
+        document.getElementById('quiz-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeQuiz();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeQuiz();
+            }
+        });
+    </script>
+</body>
+</html>
