@@ -4,32 +4,37 @@
    =========================================== */
 
 /* --- Import czcionek --- */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
 
 /* --- Zmienne --- */
 :root {
-    --primary: #4f46e5;
-    --primary-hover: #4338ca;
-    --secondary: #1e293b;
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --secondary: #0f172a;
     --accent-uklad: #3b82f6;
     --accent-os: #10b981;
     --accent-podzielnosc: #f59e0b;
-    --accent-zaokraglanie: #ec4899;
-    --success: #22c55e;
+    --accent-zaokraglanie: #f43f5e;
+    --success: #10b981;
     --error: #ef4444;
-    --bg-main: #f8fafc;
-    --bg-card: #ffffff;
+    --bg-main: #fcfdff;
+    --bg-card: rgba(255, 255, 255, 0.85);
     --text-main: #1e293b;
     --text-muted: #64748b;
     --white: #ffffff;
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-    --radius-lg: 1.5rem;
-    --radius-md: 1rem;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+    --radius-lg: 2rem;
+    --radius-md: 1.25rem;
 }
 
 /* --- Bazy --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: var(--bg-main);
@@ -40,46 +45,44 @@ body {
     min-height: 100vh;
 }
 
-/* --- Tło z gry (wersja jasna) --- */
+/* --- Nowoczesne Tło --- */
 .math-bg {
     position: fixed;
     inset: 0;
     overflow: hidden;
     pointer-events: none;
     z-index: -1;
+    background: 
+        radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 100% 100%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.03) 0%, transparent 50%);
 }
 
 .grid-bg {
     position: absolute;
     inset: 0;
     background-image: 
-        linear-gradient(rgba(79, 70, 229, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(79, 70, 229, 0.05) 1px, transparent 1px);
-    background-size: 50px 50px;
-    animation: gridMove 30s linear infinite;
-}
-
-@keyframes gridMove {
-    0% { background-position: 0 0; }
-    100% { background-position: 50px 50px; }
+        linear-gradient(rgba(79, 70, 229, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79, 70, 229, 0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(circle at center, black, transparent 80%);
+    -webkit-mask-image: radial-gradient(circle at center, black, transparent 80%);
 }
 
 .math-symbol {
     position: absolute;
-    font-size: 24px;
-    color: rgba(79, 70, 229, 0.1);
+    font-weight: 700;
     font-family: 'Times New Roman', serif;
-    animation: floatUp linear infinite;
+    pointer-events: none;
     will-change: transform;
 }
 
 @keyframes floatUp {
-    0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+    0% { transform: translateY(110vh) rotate(0deg); }
+    100% { transform: translateY(-20vh) rotate(360deg); }
 }
 
+/* --- Kontener --- */
 .container {
     max-width: 900px;
     margin: 0 auto;
@@ -90,118 +93,130 @@ body {
 
 /* --- Header --- */
 .header {
-    padding: 4rem 0 3rem;
+    padding: 6rem 0 4rem;
     text-align: center;
 }
 
 .header .logo {
-    display: inline-block;
-    font-size: 4.5rem;
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04));
-    animation: floating 3s ease-in-out infinite;
+    display: block;
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
+    animation: floating 4s ease-in-out infinite;
 }
 
 @keyframes floating {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(3deg); }
 }
 
 .header h1 {
-    font-size: 4rem;
-    font-weight: 800;
-    letter-spacing: -0.025em;
+    font-size: 5rem;
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    margin-bottom: 0.25rem;
+    position: relative;
+    display: inline-block;
     color: var(--secondary);
-    margin-bottom: 0.5rem;
-    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+}
+
+.header h1::before {
+    content: 'PITAGORAS GO!';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: -1;
+    background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    filter: blur(12px);
+    opacity: 0.4;
 }
 
 .header .subtitle {
     font-size: 1.5rem;
     color: var(--text-muted);
     font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
 }
 
 .header .author {
-    margin-top: 2.5rem;
-    font-size: 1.1rem;
-    color: var(--primary);
+    margin-top: 3rem;
+    font-size: 1rem;
+    color: var(--white);
     font-weight: 700;
-    background: var(--white);
+    background: var(--secondary);
     display: inline-block;
-    padding: 0.75rem 1.75rem;
-    border-radius: 2rem;
-    box-shadow: var(--shadow);
-    border: 2px solid var(--bg-main);
-    transform: rotate(-1deg);
+    padding: 0.75rem 2.5rem;
+    border-radius: 100px;
+    box-shadow: 0 10px 20px -5px rgba(15, 23, 42, 0.3);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* --- Grid Tematów (teraz lista) --- */
+/* --- Karty Tematów --- */
 .topics-grid {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.25rem;
     margin: 3rem 0;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .topic-card {
     background: var(--bg-card);
-    padding: 2rem 2.5rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1.75rem 2.5rem;
     border-radius: var(--radius-md);
     text-decoration: none;
     color: inherit;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     box-shadow: var(--shadow);
-    border: 1px solid rgba(226, 232, 240, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.7);
     display: grid;
-    grid-template-columns: 80px 1fr auto;
+    grid-template-columns: 70px 1fr auto;
     align-items: center;
     position: relative;
     overflow: hidden;
 }
 
 .topic-card:hover {
-    transform: translateX(10px);
+    transform: scale(1.02) translateX(10px);
     box-shadow: var(--shadow-lg);
-    border-color: var(--card-accent);
+    background: var(--white);
 }
 
 .topic-card .icon {
-    font-size: 2.5rem;
-    margin-bottom: 0;
-}
-
-.topic-card .text-content {
-    padding: 0 1rem;
+    font-size: 2.2rem;
 }
 
 .topic-card h2 {
     font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
+    font-weight: 800;
     color: var(--secondary);
+    margin-bottom: 0.25rem;
 }
 
 .topic-card p {
     color: var(--text-muted);
     font-size: 0.95rem;
-    margin-bottom: 0;
 }
 
 .topic-card .arrow {
-    font-size: 1.5rem;
-    color: var(--text-muted);
-    transition: transform 0.3s;
+    width: 40px;
+    height: 40px;
+    background: #f1f5f9;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    transition: all 0.3s;
 }
 
 .topic-card:hover .arrow {
-    transform: translateX(5px);
-    color: var(--card-accent);
+    background: var(--card-accent);
+    color: var(--white);
+    transform: rotate(-45deg);
 }
 
 .topic-card.uklad { --card-accent: var(--accent-uklad); }
@@ -211,135 +226,76 @@ body {
 
 /* --- Sekcja Gry --- */
 .game-section {
-    margin: 4rem 0 6rem;
+    margin: 6rem 0;
     text-align: center;
 }
 
 .game-btn {
+    position: relative;
     display: inline-flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.25rem;
     background: var(--secondary);
     color: var(--white);
-    padding: 1.25rem 2.5rem;
+    padding: 1.5rem 4rem;
     border-radius: 100px;
-    font-size: 1.25rem;
-    font-weight: 700;
+    font-size: 1.5rem;
+    font-weight: 800;
     text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 25px -5px rgba(30, 41, 59, 0.3);
+    transition: all 0.4s;
+    box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.4);
 }
 
 .game-btn:hover {
-    transform: scale(1.05);
+    transform: translateY(-5px) scale(1.05);
     background: #000;
-    box-shadow: 0 20px 30px -10px rgba(30, 41, 59, 0.4);
-}
-
-.game-icon {
-    font-size: 1.75rem;
 }
 
 .game-description {
     margin-top: 1.5rem;
     color: var(--text-muted);
-    font-weight: 500;
+    font-weight: 600;
 }
 
-/* --- Nawigacja podstron --- */
+/* --- Podstrony --- */
 .nav-bar {
     padding: 1.5rem 0;
-    background: rgba(248, 250, 252, 0.8);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(12px);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
-}
-
-.nav-bar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
 .back-btn {
     text-decoration: none;
     color: var(--text-main);
-    font-weight: 600;
+    font-weight: 700;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 0.75rem;
-    transition: background 0.2s;
 }
 
-.back-btn:hover {
-    background: rgba(0, 0, 0, 0.05);
-}
-
-.nav-logo {
-    font-weight: 800;
-    font-size: 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-/* --- Treść podstron --- */
 .content-wrapper {
     background: var(--bg-card);
+    backdrop-filter: blur(10px);
     border-radius: var(--radius-lg);
     padding: 3rem;
     margin-top: 2rem;
     box-shadow: var(--shadow);
+    border: 1px solid rgba(255,255,255,0.7);
 }
 
-.page-title {
-    text-align: center;
-    margin-bottom: 4rem;
-}
+.page-title { text-align: center; margin-bottom: 4rem; }
+.page-title .icon { font-size: 4rem; display: block; margin-bottom: 1rem; }
+.page-title h1 { font-size: 3rem; font-weight: 800; color: var(--secondary); }
 
-.page-title .icon {
-    font-size: 4rem;
-    display: block;
-    margin-bottom: 1rem;
-}
+.section { margin-bottom: 4rem; }
+.section-title { font-size: 1.75rem; font-weight: 800; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; color: var(--secondary); }
 
-.page-title h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    color: var(--secondary);
-}
-
-.section {
-    margin-bottom: 4rem;
-}
-
-.section-title {
-    font-size: 1.75rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    color: var(--secondary);
-}
-
-.theory p {
-    font-size: 1.125rem;
-    color: #334155;
-    margin-bottom: 1.5rem;
-}
-
-.highlight {
-    background: #fef3c7;
-    color: #92400e;
-    padding: 0.2rem 0.5rem;
-    border-radius: 0.375rem;
-    font-weight: 600;
-}
+.theory p { font-size: 1.1rem; margin-bottom: 1.5rem; }
+.highlight { background: #fef3c7; color: #92400e; padding: 0.2rem 0.5rem; border-radius: 0.5rem; font-weight: 700; }
 
 .formula {
     background: var(--bg-main);
@@ -347,180 +303,39 @@ body {
     border-radius: var(--radius-md);
     font-family: 'Courier New', monospace;
     font-size: 1.25rem;
-    font-weight: 700;
+    font-weight: 800;
     text-align: center;
     border: 2px dashed #e2e8f0;
     margin: 2rem 0;
-    color: var(--primary);
 }
 
-/* --- Przykłady --- */
-.example-card {
-    background: var(--bg-main);
-    border-radius: var(--radius-md);
-    padding: 2rem;
-    margin-bottom: 1.5rem;
-}
+.example-card { background: #f8fafc; border-radius: var(--radius-md); padding: 2rem; margin-bottom: 1.5rem; }
+.example-card .task { font-weight: 800; margin-bottom: 1rem; }
+.example-card .solution { background: var(--white); padding: 1.5rem; border-radius: 1rem; border-left: 5px solid var(--success); }
 
-.example-card .task {
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-}
-
-.example-card .solution {
-    background: var(--white);
-    padding: 1.5rem;
-    border-radius: 0.75rem;
-    border-left: 4px solid var(--success);
-}
-
-.solution-title {
-    color: var(--success);
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
-
-/* --- Quizy --- */
-.quiz-buttons {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-}
-
-.quiz-btn {
-    border: none;
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    font-weight: 700;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    color: var(--white);
-}
-
+.quiz-buttons { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+.quiz-btn { border: none; padding: 1.5rem; border-radius: var(--radius-md); font-weight: 800; cursor: pointer; color: var(--white); transition: 0.3s; }
 .quiz-btn.easy { background: var(--accent-os); }
 .quiz-btn.medium { background: var(--accent-podzielnosc); }
 .quiz-btn.hard { background: var(--error); }
+.quiz-btn:hover { transform: translateY(-5px); filter: brightness(1.1); }
 
-.quiz-btn:hover {
-    transform: translateY(-4px);
-    filter: brightness(1.1);
-}
-
-/* --- Modal Quizu --- */
-.quiz-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(8px);
-    z-index: 1000;
-    place-items: center;
-    padding: 1rem;
-}
-
+.quiz-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 1000; place-items: center; }
 .quiz-modal.active { display: grid; }
-
-.quiz-container {
-    background: var(--white);
-    width: 100%;
-    max-width: 600px;
-    padding: 3rem;
-    border-radius: var(--radius-lg);
-    position: relative;
-}
-
-.quiz-close {
-    position: absolute;
-    top: 1.5rem;
-    right: 1.5rem;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--text-muted);
-}
-
-.quiz-progress {
-    margin-bottom: 2rem;
-    font-weight: 600;
-}
-
-.quiz-progress-bar {
-    height: 8px;
-    background: var(--bg-main);
-    border-radius: 4px;
-    overflow: hidden;
-    margin-top: 0.5rem;
-}
-
-.quiz-progress-fill {
-    height: 100%;
-    background: var(--primary);
-    transition: width 0.3s;
-}
-
-.quiz-question {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-}
-
-.quiz-answers {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.quiz-answer {
-    padding: 1.25rem;
-    background: var(--bg-main);
-    border: 2px solid transparent;
-    border-radius: 1rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-weight: 600;
-}
-
-.quiz-answer:hover:not(.disabled) {
-    border-color: var(--primary);
-    background: var(--white);
-}
-
+.quiz-container { background: var(--white); width: 90%; max-width: 600px; padding: 3rem; border-radius: var(--radius-lg); position: relative; }
+.quiz-close { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2rem; cursor: pointer; }
+.quiz-progress-bar { height: 8px; background: #f1f5f9; border-radius: 4px; overflow: hidden; margin: 1rem 0 2rem; }
+.quiz-progress-fill { height: 100%; background: var(--primary); transition: 0.3s; }
+.quiz-question { font-size: 1.5rem; font-weight: 800; margin-bottom: 2rem; }
+.quiz-answer { padding: 1.25rem; background: #f8fafc; border-radius: 1rem; cursor: pointer; margin-bottom: 1rem; font-weight: 600; border: 2px solid transparent; }
+.quiz-answer:hover:not(.disabled) { border-color: var(--primary); }
 .quiz-answer.correct { background: #dcfce7; border-color: var(--success); }
 .quiz-answer.incorrect { background: #fee2e2; border-color: var(--error); }
-.quiz-answer.disabled { cursor: not-allowed; opacity: 0.7; }
 
-.quiz-result { text-align: center; }
-.quiz-result .score { font-size: 4rem; font-weight: 800; color: var(--primary); margin-bottom: 1rem; }
-.quiz-result .comment { font-size: 1.25rem; margin-bottom: 2rem; color: var(--text-muted); }
+.footer { padding: 4rem 0; text-align: center; color: var(--text-muted); border-top: 1px solid #e2e8f0; }
 
-.retry-btn {
-    background: var(--primary);
-    color: var(--white);
-    border: none;
-    padding: 1rem 2rem;
-    border-radius: 0.75rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.retry-btn:hover {
-    background: var(--primary-hover);
-    transform: translateY(-2px);
-}
-
-/* --- Footer --- */
-.footer {
-    padding: 4rem 0;
-    text-align: center;
-    color: var(--text-muted);
-    border-top: 1px solid rgba(226, 232, 240, 0.5);
-}
-
-/* --- Responsywność --- */
 @media (max-width: 640px) {
-    .header h1 { font-size: 2.5rem; }
-    .content-wrapper { padding: 1.5rem; }
+    .header h1 { font-size: 3rem; }
     .page-title h1 { font-size: 2rem; }
+    .content-wrapper { padding: 1.5rem; }
 }

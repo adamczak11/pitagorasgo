@@ -83,28 +83,37 @@
     </footer>
 
     <script>
-        // Generowanie pływających symboli (tak jak w grze, ale w wersji jasnej)
         function createSymbols() {
             const container = document.querySelector('.math-bg');
             const symbols = ['π', '∑', '∫', '√', 'Δ', '∞', 'α', 'β', 'θ', '±', '÷', '×', '=', '+', '−', '%', '²', '³', '∠', '⊿', 'λ', 'φ', 'Ω'];
             
-            setInterval(() => {
+            function spawn() {
                 const el = document.createElement('div');
                 el.className = 'math-symbol';
                 el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
                 
                 const startX = Math.random() * 100;
-                const duration = 10 + Math.random() * 15;
-                const size = 15 + Math.random() * 25;
+                const duration = 15 + Math.random() * 20;
+                const size = 15 + Math.random() * 30;
                 
                 el.style.left = startX + 'vw';
                 el.style.fontSize = size + 'px';
-                el.style.animationDuration = duration + 's';
+                el.style.animation = `floatUp ${duration}s linear forwards`;
+                
+                // Losowy kolor z palety projektu
+                const colors = ['rgba(99, 102, 241, 0.2)', 'rgba(16, 185, 129, 0.2)', 'rgba(245, 158, 11, 0.2)', 'rgba(244, 63, 94, 0.2)'];
+                el.style.color = colors[Math.floor(Math.random() * colors.length)];
                 
                 container.appendChild(el);
-                
                 setTimeout(() => el.remove(), duration * 1000);
-            }, 800);
+            }
+
+            // Początkowe symbole
+            for(let i=0; i<15; i++) {
+                setTimeout(spawn, Math.random() * 5000);
+            }
+            // Ciągłe generowanie
+            setInterval(spawn, 1500);
         }
         createSymbols();
     </script>
