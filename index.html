@@ -18,12 +18,77 @@
     <!-- Header -->
     <header class="header">
         <div class="container">
-            <span class="logo">📐</span>
+            <div class="logo-container">
+                <span class="logo-symbol">π</span>
+                <span class="logo-accent">GO!</span>
+            </div>
             <h1>Pitagoras Go!</h1>
             <p class="subtitle">Matematyka 8 klasy - bez nudy!</p>
-            <p class="author">Przygotował: Adam Kasprzak, klasa 8C</p>
+            <button class="author" onclick="openCredits()">Przygotował: Adam Kasprzak, klasa 8C</button>
         </div>
     </header>
+
+    <!-- Modal z informacjami o projekcie -->
+    <div id="credits-modal" class="credits-modal">
+        <div class="credits-container">
+            <span class="credits-close" onclick="closeCredits()">&times;</span>
+            <div class="credits-header">
+                <span class="credits-icon">🚀</span>
+                <h2>O projekcie</h2>
+            </div>
+            <div class="credits-content">
+                <div class="credits-row highlight">
+                    <span class="credits-icon-small">💡</span>
+                    <div class="credits-info">
+                        <span class="credits-label">Pomysł i realizacja</span>
+                        <span class="credits-value">Adam Kasprzak, 8C</span>
+                    </div>
+                </div>
+                <div class="credits-row">
+                    <span class="credits-icon-small">🤖</span>
+                    <div class="credits-info">
+                        <span class="credits-label">Kodowanie AI</span>
+                        <span class="credits-value">Claude Code Opus 4.5<br>Gemini 3 Flash</span>
+                    </div>
+                </div>
+                <div class="credits-row">
+                    <span class="credits-icon-small">💻</span>
+                    <div class="credits-info">
+                        <span class="credits-label">IDE</span>
+                        <span class="credits-value">Cursor, VS Code</span>
+                    </div>
+                </div>
+                <div class="credits-row">
+                    <span class="credits-icon-small">🛠️</span>
+                    <div class="credits-info">
+                        <span class="credits-label">Technologie</span>
+                        <span class="credits-value">HTML, CSS, JavaScript</span>
+                    </div>
+                </div>
+                <div class="credits-row">
+                    <span class="credits-icon-small">☁️</span>
+                    <div class="credits-info">
+                        <span class="credits-label">Hosting</span>
+                        <span class="credits-value">AWS S3, Route 53<br><small>pitagorasgo.click</small></span>
+                    </div>
+                </div>
+                <div class="credits-row">
+                    <span class="credits-icon-small">📦</span>
+                    <div class="credits-info">
+                        <span class="credits-label">Repozytorium</span>
+                        <span class="credits-value">GitHub</span>
+                    </div>
+                </div>
+                <div class="credits-row">
+                    <span class="credits-icon-small">👀</span>
+                    <div class="credits-info">
+                        <span class="credits-label">Support</span>
+                        <span class="credits-value">Mój Tata 😊</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Główna zawartość -->
     <main class="container">
@@ -79,41 +144,105 @@
     <!-- Footer -->
     <footer class="footer container">
         <p class="school">Społeczna Jedynka im. św. Urszuli Ledóchowskiej w Poznaniu</p>
-        <p class="year">2025</p>
+        <p class="year">2026</p>
     </footer>
 
     <script>
         function createSymbols() {
             const container = document.querySelector('.math-bg');
             const symbols = ['π', '∑', '∫', '√', 'Δ', '∞', 'α', 'β', 'θ', '±', '÷', '×', '=', '+', '−', '%', '²', '³', '∠', '⊿', 'λ', 'φ', 'Ω'];
-            
+
             function spawn() {
                 const el = document.createElement('div');
                 el.className = 'math-symbol';
                 el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-                
+
                 const startX = Math.random() * 100;
                 const duration = 12 + Math.random() * 10;
-                const size = 20 + Math.random() * 40; // Większe symbole
-                
+                const size = 20 + Math.random() * 40;
+
                 el.style.left = startX + 'vw';
                 el.style.fontSize = size + 'px';
                 el.style.animation = `floatUp ${duration}s linear forwards`;
-                
-                // Mocniejsze kolory
                 const colors = ['rgba(99, 102, 241, 0.4)', 'rgba(16, 185, 129, 0.4)', 'rgba(245, 158, 11, 0.4)', 'rgba(244, 63, 94, 0.4)'];
                 el.style.color = colors[Math.floor(Math.random() * colors.length)];
-                
+
+                // Double-click detection
+                el.addEventListener('dblclick', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    explodeSymbol(el, e.clientX, e.clientY);
+                });
+
                 container.appendChild(el);
                 setTimeout(() => el.remove(), duration * 1000);
+            }
+
+            function explodeSymbol(el, x, y) {
+                const symbol = el.textContent;
+                const colors = ['#6366f1', '#10b981', '#f59e0b', '#f43f5e', '#a855f7'];
+
+                // Tworzenie 10 mini-symboli
+                for (let i = 0; i < 10; i++) {
+                    const mini = document.createElement('div');
+                    mini.className = 'mini-symbol';
+                    mini.textContent = symbol;
+                    mini.style.left = x + 'px';
+                    mini.style.top = y + 'px';
+                    mini.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+                    const angle = (Math.PI * 2 / 10) * i + Math.random() * 0.5;
+                    const distance = 80 + Math.random() * 120;
+                    mini.style.setProperty('--tx', Math.cos(angle) * distance + 'px');
+                    mini.style.setProperty('--ty', Math.sin(angle) * distance + 'px');
+                    mini.style.setProperty('--rot', (Math.random() * 720 - 360) + 'deg');
+
+                    document.body.appendChild(mini);
+                    setTimeout(() => mini.remove(), 1000);
+                }
+
+                // Chmurka komiksowa BUM!
+                const wow = document.createElement('div');
+                wow.className = 'comic-bubble';
+                wow.innerHTML = 'BUM!';
+                wow.style.left = x + 'px';
+                wow.style.top = y + 'px';
+                document.body.appendChild(wow);
+                setTimeout(() => wow.remove(), 1200);
+
+                // Usuń oryginalny symbol
+                el.remove();
             }
 
             for(let i=0; i<20; i++) {
                 setTimeout(spawn, Math.random() * 3000);
             }
-            setInterval(spawn, 1000); // Częściej
+            setInterval(spawn, 1000);
         }
         createSymbols();
+
+        // Modal credits
+        function openCredits() {
+            document.getElementById('credits-modal').classList.add('active');
+        }
+
+        function closeCredits() {
+            document.getElementById('credits-modal').classList.remove('active');
+        }
+
+        // Zamknij modal klikając poza nim
+        document.getElementById('credits-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeCredits();
+            }
+        });
+
+        // Zamknij modal klawiszem Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeCredits();
+            }
+        });
     </script>
 </body>
 </html>

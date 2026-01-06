@@ -348,11 +348,6 @@
         }
 
         function triggerBoom() {
-            // Shake screen
-            document.body.classList.add('screen-shake');
-            setTimeout(() => document.body.classList.remove('screen-shake'), 400);
-
-            // Crying Emoji Feedback
             const emoji = document.createElement('div');
             emoji.className = 'emoji-feedback';
             emoji.innerText = '😢';

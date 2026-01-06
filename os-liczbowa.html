@@ -333,9 +333,6 @@
         }
 
         function triggerBoom() {
-            document.body.classList.add('screen-shake');
-            setTimeout(() => document.body.classList.remove('screen-shake'), 400);
-            
             const emoji = document.createElement('div');
             emoji.className = 'emoji-feedback';
             emoji.innerText = '😢';
