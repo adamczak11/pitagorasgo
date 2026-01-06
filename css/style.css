@@ -213,6 +213,15 @@ body {
     opacity: 0.85;
 }
 
+.header .subtitle-small {
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+    display: block;
+    margin-top: 0.5rem;
+}
+
 .header .author {
     margin-top: 3rem;
     color: var(--white);
