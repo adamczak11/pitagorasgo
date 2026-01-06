@@ -335,13 +335,12 @@
         function triggerBoom() {
             document.body.classList.add('screen-shake');
             setTimeout(() => document.body.classList.remove('screen-shake'), 400);
-            const boom = document.createElement('div');
-            boom.className = 'boom-text';
-            boom.innerText = '😢';
-            boom.style.left = '50%';
-            boom.style.top = '50%';
-            document.body.appendChild(boom);
-            setTimeout(() => boom.remove(), 600);
+            
+            const emoji = document.createElement('div');
+            emoji.className = 'emoji-feedback';
+            emoji.innerText = '😢';
+            document.body.appendChild(emoji);
+            setTimeout(() => emoji.remove(), 800);
         }
 
         function showResult() {

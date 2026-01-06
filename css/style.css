@@ -358,12 +358,50 @@ body {
 .quiz-progress-bar { height: 8px; background: #f1f5f9; border-radius: 4px; overflow: hidden; margin: 1rem 0 2rem; }
 .quiz-progress-fill { height: 100%; background: var(--primary); transition: 0.3s; }
 .quiz-question { font-size: 1.5rem; font-weight: 800; margin-bottom: 2rem; }
-.quiz-answer { padding: 1.25rem; background: #f8fafc; border-radius: 1rem; cursor: pointer; margin-bottom: 1rem; font-weight: 600; border: 2px solid transparent; }
-.quiz-answer:hover:not(.disabled) { border-color: var(--primary); }
-.quiz-answer.correct { background: #dcfce7; border-color: var(--success); }
-.quiz-answer.incorrect { background: #fee2e2; border-color: var(--error); }
+.quiz-answer {
+    padding: 1.25rem;
+    background: #f8fafc;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    border: 2px solid transparent;
+    position: relative; /* Dla ikonek ✓ i ✕ */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s;
+}
 
-/* --- Efekty Specjalne (Fajerwerki i Boom) --- */
+.quiz-answer:hover:not(.disabled) { border-color: var(--primary); }
+
+.quiz-answer.correct { 
+    background: #dcfce7; 
+    border-color: var(--success); 
+}
+
+.quiz-answer.correct::after {
+    content: '✓';
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--success);
+}
+
+.quiz-answer.incorrect { 
+    background: #fee2e2; 
+    border-color: var(--error); 
+}
+
+.quiz-answer.incorrect::after {
+    content: '✕';
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--error);
+}
+
+.quiz-answer.disabled { cursor: not-allowed; opacity: 0.7; }
+
+/* --- Efekty Specjalne (Fajerwerki i Emoji) --- */
 .firework-particle {
     position: fixed;
     width: 8px;
@@ -379,18 +417,21 @@ body {
     100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
 }
 
-.boom-text {
+.emoji-feedback {
     position: fixed;
-    font-size: 8rem; /* Większa dla emoji */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10rem;
     z-index: 10000;
     pointer-events: none;
-    animation: boomEffect 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    animation: emojiPopup 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-@keyframes boomEffect {
-    0% { transform: translate(-50%, -50%) scale(0) rotate(-20deg); opacity: 0; }
-    50% { transform: translate(-50%, -50%) scale(1.5) rotate(10deg); opacity: 1; }
-    100% { transform: translate(-50%, -50%) scale(1.2) rotate(0deg); opacity: 0; }
+@keyframes emojiPopup {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
 }
 
 .screen-shake {
