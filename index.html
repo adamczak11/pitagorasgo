@@ -93,27 +93,25 @@
                 el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
                 
                 const startX = Math.random() * 100;
-                const duration = 15 + Math.random() * 20;
-                const size = 15 + Math.random() * 30;
+                const duration = 12 + Math.random() * 10;
+                const size = 20 + Math.random() * 40; // Większe symbole
                 
                 el.style.left = startX + 'vw';
                 el.style.fontSize = size + 'px';
                 el.style.animation = `floatUp ${duration}s linear forwards`;
                 
-                // Losowy kolor z palety projektu
-                const colors = ['rgba(99, 102, 241, 0.2)', 'rgba(16, 185, 129, 0.2)', 'rgba(245, 158, 11, 0.2)', 'rgba(244, 63, 94, 0.2)'];
+                // Mocniejsze kolory
+                const colors = ['rgba(99, 102, 241, 0.4)', 'rgba(16, 185, 129, 0.4)', 'rgba(245, 158, 11, 0.4)', 'rgba(244, 63, 94, 0.4)'];
                 el.style.color = colors[Math.floor(Math.random() * colors.length)];
                 
                 container.appendChild(el);
                 setTimeout(() => el.remove(), duration * 1000);
             }
 
-            // Początkowe symbole
-            for(let i=0; i<15; i++) {
-                setTimeout(spawn, Math.random() * 5000);
+            for(let i=0; i<20; i++) {
+                setTimeout(spawn, Math.random() * 3000);
             }
-            // Ciągłe generowanie
-            setInterval(spawn, 1500);
+            setInterval(spawn, 1000); // Częściej
         }
         createSymbols();
     </script>
