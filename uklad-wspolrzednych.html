@@ -336,11 +336,11 @@
             setTimeout(() => document.body.classList.remove('screen-shake'), 400);
             const boom = document.createElement('div');
             boom.className = 'boom-text';
-            boom.innerText = 'BOOM!';
+            boom.innerText = '😢';
             boom.style.left = '50%';
             boom.style.top = '50%';
             document.body.appendChild(boom);
-            setTimeout(() => boom.remove(), 500);
+            setTimeout(() => boom.remove(), 600);
         }
 
         function showResult() {
