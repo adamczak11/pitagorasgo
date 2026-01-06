@@ -411,6 +411,9 @@
         function createSymbols() {
             const container = document.querySelector('.math-bg');
             const symbols = ['π', '∑', '∫', '√', 'Δ', '∞', 'α', 'β', 'θ', '±', '÷', '×', '=', '+', '−', '%', '²', '³', '∠', '⊿', 'λ', 'φ', 'Ω'];
+            const isMobile = window.innerWidth <= 768;
+            const spawnInterval = isMobile ? 3500 : 1500;
+
             setInterval(() => {
                 const el = document.createElement('div');
                 el.className = 'math-symbol';
@@ -423,7 +426,7 @@
                 el.style.animationDuration = duration + 's';
                 container.appendChild(el);
                 setTimeout(() => el.remove(), duration * 1000);
-            }, 1500);
+            }, spawnInterval);
         }
         createSymbols();
     </script>

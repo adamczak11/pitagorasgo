@@ -214,10 +214,15 @@
                 el.remove();
             }
 
-            for(let i=0; i<20; i++) {
+            // Mniej symboli na mobile dla lepszej wydajności
+            const isMobile = window.innerWidth <= 768;
+            const initialCount = isMobile ? 8 : 20;
+            const spawnInterval = isMobile ? 2500 : 1000;
+
+            for(let i=0; i<initialCount; i++) {
                 setTimeout(spawn, Math.random() * 3000);
             }
-            setInterval(spawn, 1000);
+            setInterval(spawn, spawnInterval);
         }
         createSymbols();
 
