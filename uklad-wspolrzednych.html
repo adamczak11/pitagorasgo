@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Tło tematyczne -->
+    <div class="math-bg">
+        <div class="grid-bg"></div>
+    </div>
+
     <!-- Nawigacja -->
     <nav class="nav-bar">
         <div class="container">
@@ -336,6 +341,26 @@
                 closeQuiz();
             }
         });
+    </script>
+    <script>
+        function createSymbols() {
+            const container = document.querySelector('.math-bg');
+            const symbols = ['π', '∑', '∫', '√', 'Δ', '∞', 'α', 'β', 'θ', '±', '÷', '×', '=', '+', '−', '%', '²', '³', '∠', '⊿', 'λ', 'φ', 'Ω'];
+            setInterval(() => {
+                const el = document.createElement('div');
+                el.className = 'math-symbol';
+                el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                const startX = Math.random() * 100;
+                const duration = 15 + Math.random() * 15;
+                const size = 15 + Math.random() * 20;
+                el.style.left = startX + 'vw';
+                el.style.fontSize = size + 'px';
+                el.style.animationDuration = duration + 's';
+                container.appendChild(el);
+                setTimeout(() => el.remove(), duration * 1000);
+            }, 1500);
+        }
+        createSymbols();
     </script>
 </body>
 </html>

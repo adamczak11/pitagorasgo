@@ -10,6 +10,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Tło tematyczne -->
+    <div class="math-bg">
+        <div class="grid-bg"></div>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -26,26 +31,38 @@
         <section class="topics-grid">
             <a href="uklad-wspolrzednych.html" class="topic-card uklad">
                 <span class="icon">📍</span>
-                <h2>Układ współrzędnych</h2>
-                <p>Poznaj osie X i Y, ćwiartki i współrzędne punktów na płaszczyźnie</p>
+                <div class="text-content">
+                    <h2>Układ współrzędnych</h2>
+                    <p>Poznaj osie X i Y, ćwiartki i współrzędne punktów na płaszczyźnie</p>
+                </div>
+                <span class="arrow">→</span>
             </a>
 
             <a href="os-liczbowa.html" class="topic-card os">
                 <span class="icon">↔️</span>
-                <h2>Oś liczbowa</h2>
-                <p>Liczby całkowite, ułamki i ich położenie na osi liczbowej</p>
+                <div class="text-content">
+                    <h2>Oś liczbowa</h2>
+                    <p>Liczby całkowite, ułamki i ich położenie na osi liczbowej</p>
+                </div>
+                <span class="arrow">→</span>
             </a>
 
             <a href="podzielnosc-liczb.html" class="topic-card podzielnosc">
                 <span class="icon">➗</span>
-                <h2>Podzielność liczb</h2>
-                <p>Dzielniki, wielokrotności, NWD, NWW i liczby pierwsze</p>
+                <div class="text-content">
+                    <h2>Podzielność liczb</h2>
+                    <p>Dzielniki, wielokrotności, NWD, NWW i cechy podzielności</p>
+                </div>
+                <span class="arrow">→</span>
             </a>
 
             <a href="zaokraglanie.html" class="topic-card zaokraglanie">
                 <span class="icon">🎯</span>
-                <h2>Zaokrąglanie liczb</h2>
-                <p>Zasady zaokrąglania do różnych rzędów wielkości</p>
+                <div class="text-content">
+                    <h2>Zaokrąglanie liczb</h2>
+                    <p>Zasady zaokrąglania do różnych rzędów wielkości</p>
+                </div>
+                <span class="arrow">→</span>
             </a>
         </section>
 
@@ -64,5 +81,32 @@
         <p class="school">Społeczna Jedynka im. św. Urszuli Ledóchowskiej w Poznaniu</p>
         <p class="year">2025</p>
     </footer>
+
+    <script>
+        // Generowanie pływających symboli (tak jak w grze, ale w wersji jasnej)
+        function createSymbols() {
+            const container = document.querySelector('.math-bg');
+            const symbols = ['π', '∑', '∫', '√', 'Δ', '∞', 'α', 'β', 'θ', '±', '÷', '×', '=', '+', '−', '%', '²', '³', '∠', '⊿', 'λ', 'φ', 'Ω'];
+            
+            setInterval(() => {
+                const el = document.createElement('div');
+                el.className = 'math-symbol';
+                el.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                
+                const startX = Math.random() * 100;
+                const duration = 10 + Math.random() * 15;
+                const size = 15 + Math.random() * 25;
+                
+                el.style.left = startX + 'vw';
+                el.style.fontSize = size + 'px';
+                el.style.animationDuration = duration + 's';
+                
+                container.appendChild(el);
+                
+                setTimeout(() => el.remove(), duration * 1000);
+            }, 800);
+        }
+        createSymbols();
+    </script>
 </body>
 </html>
