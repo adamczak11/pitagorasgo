@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Go Pitagoras Go! by Adam Kasprzak 8c</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%236366f1'/><text x='50' y='72' font-size='60' font-weight='900' fill='white' text-anchor='middle' font-family='sans-serif'>π</text></svg>">
     <style>
         body {
             margin: 0;
@@ -1108,7 +1109,31 @@
                         { q: "Jaki kąt oznaczono?", a: "prosty", bad: ["ostry", "rozwarty", "pełny"], img: '<svg viewBox="0 0 200 150"><line x1="30" y1="100" x2="170" y2="100" stroke="#333" stroke-width="3"/><line x1="100" y1="100" x2="100" y2="30" stroke="#333" stroke-width="3"/><rect x="100" y="80" width="20" height="20" fill="none" stroke="#e74c3c" stroke-width="2"/></svg>' },
                         { q: "Ten kąt to kąt:", a: "ostry", bad: ["prosty", "rozwarty", "półpełny"], img: '<svg viewBox="0 0 200 150"><line x1="30" y1="120" x2="170" y2="120" stroke="#333" stroke-width="3"/><line x1="30" y1="120" x2="100" y2="50" stroke="#333" stroke-width="3"/><path d="M 60 120 A 30 30 0 0 1 50 95" fill="none" stroke="#e74c3c" stroke-width="3"/><text x="65" y="105" font-size="14" fill="#e74c3c">45°</text></svg>' },
                         { q: "Proste a i b są:", a: "równoległe", bad: ["prostopadłe", "sieczne", "pokrywające"], img: '<svg viewBox="0 0 200 150"><line x1="20" y1="50" x2="180" y2="50" stroke="#333" stroke-width="3"/><line x1="20" y1="100" x2="180" y2="100" stroke="#333" stroke-width="3"/><text x="185" y="55" font-size="14">a</text><text x="185" y="105" font-size="14">b</text></svg>' },
-                        { q: "Proste a i b są:", a: "prostopadłe", bad: ["równoległe", "sieczne", "pokrywające"], img: '<svg viewBox="0 0 200 150"><line x1="20" y1="75" x2="180" y2="75" stroke="#333" stroke-width="3"/><line x1="100" y1="20" x2="100" y2="130" stroke="#333" stroke-width="3"/><rect x="100" y="75" width="15" height="15" fill="none" stroke="#e74c3c" stroke-width="2"/><text x="160" y="70" font-size="14">a</text><text x="105" y="35" font-size="14">b</text></svg>' }
+                        { q: "Proste a i b są:", a: "prostopadłe", bad: ["równoległe", "sieczne", "pokrywające"], img: '<svg viewBox="0 0 200 150"><line x1="20" y1="75" x2="180" y2="75" stroke="#333" stroke-width="3"/><line x1="100" y1="20" x2="100" y2="130" stroke="#333" stroke-width="3"/><rect x="100" y="75" width="15" height="15" fill="none" stroke="#e74c3c" stroke-width="2"/><text x="160" y="70" font-size="14">a</text><text x="105" y="35" font-size="14">b</text></svg>' },
+                        // Układ współrzędnych
+                        { q: "Pozioma oś to:", a: "oś X", bad: ["oś Y", "oś Z", "oś główna"] },
+                        { q: "Ile ćwiartek ma układ?", a: "4", bad: ["2", "3", "6"] },
+                        { q: "Początek układu to:", a: "O", bad: ["P", "A", "X"] },
+                        { q: "Punkt (0,0) to:", a: "początek układu", bad: ["I ćwiartka", "oś X", "oś Y"] },
+                        { q: "W P(x,y) odcięta to:", a: "x", bad: ["y", "obie", "żadna"] },
+                        // Oś liczbowa
+                        { q: "Większa: -3 czy -7?", a: "-3", bad: ["-7", "równe", "nie wiadomo"] },
+                        { q: "|-4| =", a: "4", bad: ["-4", "0", "-1"] },
+                        { q: "Liczby dodatnie leżą:", a: "po prawej zera", bad: ["po lewej", "na górze", "na dole"] },
+                        { q: "Liczba przeciwna do 5:", a: "-5", bad: ["5", "0", "1/5"] },
+                        { q: "Bliżej zera: -2 czy 3?", a: "-2", bad: ["3", "tak samo", "nie wiadomo"] },
+                        // Podzielność
+                        { q: "Dzielnik 20:", a: "5", bad: ["3", "6", "7"] },
+                        { q: "Wielokrotność 4:", a: "16", bad: ["10", "14", "18"] },
+                        { q: "Dzielników l. pierwszej:", a: "2", bad: ["1", "3", "wiele"] },
+                        { q: "Liczba pierwsza:", a: "17", bad: ["9", "15", "21"] },
+                        { q: "Czy 1 jest pierwsza?", a: "Nie", bad: ["Tak", "Czasami", "Zależy"] },
+                        // Zaokrąglanie
+                        { q: "47 ≈ (dziesiątki):", a: "50", bad: ["40", "47", "45"] },
+                        { q: "W górę zaokrągla:", a: "5-9", bad: ["0-4", "1-4", "6-9"] },
+                        { q: "123 ≈ (dziesiątki):", a: "120", bad: ["100", "130", "125"] },
+                        { q: "2,7 ≈ (jedności):", a: "3", bad: ["2", "2,5", "2,8"] },
+                        { q: "84 ≈ (dziesiątki):", a: "80", bad: ["90", "85", "84"] }
                     ],
                     medium: [
                         { q: "Jaki to trójkąt?", a: "prostokątny", bad: ["ostrokątny", "rozwartokątny", "równoboczny"], img: '<svg viewBox="0 0 200 150"><polygon points="30,130 30,30 170,130" fill="none" stroke="#333" stroke-width="3"/><rect x="30" y="110" width="20" height="20" fill="none" stroke="#e74c3c" stroke-width="2"/><text x="50" y="55" font-size="12">90°</text></svg>' },
@@ -1156,7 +1181,31 @@
                         { q: "Ile przekątnych ma △?", a: "0", bad: ["1", "3", "2"] },
                         { q: "Środkowa dzieli bok:", a: "na pół", bad: ["na 3", "na 4", "nierówno"] },
                         { q: "Kąty α i β są:", a: "wierzchołkowe", bad: ["przyległe", "odpowiadające", "dopełniające"], img: '<svg viewBox="0 0 200 150"><line x1="30" y1="30" x2="170" y2="120" stroke="#333" stroke-width="2"/><line x1="30" y1="120" x2="170" y2="30" stroke="#333" stroke-width="2"/><text x="95" y="55" font-size="14">α</text><text x="95" y="110" font-size="14">β</text></svg>' },
-                        { q: "α + β = ?", a: "180°", bad: ["90°", "360°", "270°"], img: '<svg viewBox="0 0 200 150"><line x1="20" y1="75" x2="180" y2="75" stroke="#333" stroke-width="3"/><line x1="100" y1="75" x2="140" y2="25" stroke="#333" stroke-width="3"/><text x="70" y="70" font-size="14">α</text><text x="115" y="70" font-size="14">β</text></svg>' }
+                        { q: "α + β = ?", a: "180°", bad: ["90°", "360°", "270°"], img: '<svg viewBox="0 0 200 150"><line x1="20" y1="75" x2="180" y2="75" stroke="#333" stroke-width="3"/><line x1="100" y1="75" x2="140" y2="25" stroke="#333" stroke-width="3"/><text x="70" y="70" font-size="14">α</text><text x="115" y="70" font-size="14">β</text></svg>' },
+                        // Układ współrzędnych
+                        { q: "A(3,-2) leży w:", a: "IV ćwiartce", bad: ["I", "II", "III"] },
+                        { q: "Znaki w III ćwiartce:", a: "(-, -)", bad: ["(+, +)", "(-, +)", "(+, -)"] },
+                        { q: "B(-5, 0) leży na:", a: "osi X", bad: ["osi Y", "I ćw.", "III ćw."] },
+                        { q: "I ćwiartka to:", a: "prawa górna", bad: ["lewa górna", "lewa dolna", "prawa dolna"] },
+                        { q: "Symetryczny do (2,3) wzgl. Y:", a: "(-2, 3)", bad: ["(2, -3)", "(-2, -3)", "(3, 2)"] },
+                        // Oś liczbowa
+                        { q: "Rosnąco: -3, 1, -1, 0", a: "-3,-1,0,1", bad: ["1,0,-1,-3", "-1,-3,0,1", "0,-1,1,-3"] },
+                        { q: "|−8| + |3| =", a: "11", bad: ["5", "-5", "-11"] },
+                        { q: "Między -2,5 a -1,5:", a: "-2", bad: ["-3", "-1", "0"] },
+                        { q: "a + (-a) =", a: "0", bad: ["1", "-1", "2a"] },
+                        { q: "Prawdziwa nierówność:", a: "-5 < -2", bad: ["-5 > -2", "-5 = -2", "-5 > 2"] },
+                        // Podzielność
+                        { q: "Dzielników liczby 12:", a: "6", bad: ["4", "5", "7"] },
+                        { q: "NWD(8, 12) =", a: "4", bad: ["2", "6", "24"] },
+                        { q: "NWW(4, 6) =", a: "12", bad: ["2", "24", "10"] },
+                        { q: "24 = ?", a: "2³·3", bad: ["2·12", "4·6", "8·3"] },
+                        { q: "Względnie pierwsze:", a: "8 i 15", bad: ["4 i 6", "9 i 12", "10 i 25"] },
+                        // Zaokrąglanie
+                        { q: "3456 ≈ (setki):", a: "3500", bad: ["3400", "3450", "3000"] },
+                        { q: "7,35 ≈ (dziesiąte):", a: "7,4", bad: ["7,3", "7,0", "7,5"] },
+                        { q: "995 ≈ (dziesiątki):", a: "1000", bad: ["990", "995", "900"] },
+                        { q: "4,444 ≈ (setne):", a: "4,44", bad: ["4,45", "4,4", "4,50"] },
+                        { q: "2850 ≈ (tysiące):", a: "3000", bad: ["2000", "2800", "2900"] }
                     ],
                     medium: [
                         { q: "Kąty α i β są:", a: "naprzemianległe", bad: ["odpowiadające", "wierzchołkowe", "przyległe"], img: '<svg viewBox="0 0 200 150"><line x1="20" y1="40" x2="180" y2="40" stroke="#333" stroke-width="2"/><line x1="20" y1="110" x2="180" y2="110" stroke="#333" stroke-width="2"/><line x1="50" y1="20" x2="150" y2="130" stroke="#e74c3c" stroke-width="2"/><text x="75" y="55" font-size="14">α</text><text x="115" y="105" font-size="14">β</text><text x="10" y="35" font-size="12">a</text><text x="10" y="105" font-size="12">b</text></svg>' },
@@ -1200,7 +1249,31 @@
                         { q: "Nierówność △:\na + b ... c", a: "> c", bad: ["< c", "= c", "≥ c"] },
                         { q: "Obwód △:", a: "16", bad: ["15", "14", "18"], img: '<svg viewBox="0 0 200 150"><polygon points="100,25 30,130 170,130" fill="none" stroke="#333" stroke-width="3"/><text x="50" y="70" font-size="14">5</text><text x="140" y="70" font-size="14">5</text><text x="95" y="145" font-size="14">6</text></svg>' },
                         { q: "△ o bokach 3, 4, 5\njest:", a: "prostokątny", bad: ["ostrokątny", "rozwartokątny", "równoboczny"] },
-                        { q: "W △ prostokątnym\nnajwiększa jest:", a: "przeciwpr.", bad: ["przyprost.", "wysokość", "środkowa"] }
+                        { q: "W △ prostokątnym\nnajwiększa jest:", a: "przeciwpr.", bad: ["przyprost.", "wysokość", "środkowa"] },
+                        // Układ współrzędnych
+                        { q: "Odległość (3,4) od (0,0):", a: "5", bad: ["7", "12", "25"] },
+                        { q: "Symetryczny do (-2,5) wzgl. O:", a: "(2, -5)", bad: ["(2, 5)", "(-2, -5)", "(5, -2)"] },
+                        { q: "Środek AB: A(2,4), B(6,8):", a: "(4, 6)", bad: ["(8, 12)", "(4, 4)", "(3, 6)"] },
+                        { q: "Odległość (0,-4) od (3,0):", a: "5", bad: ["7", "4", "3"] },
+                        { q: "P(a,b)∈II ćw., Q(-a,-b)∈?", a: "IV ćwiartce", bad: ["I", "II", "III"] },
+                        // Oś liczbowa
+                        { q: "|−3| − |−7| =", a: "-4", bad: ["4", "10", "-10"] },
+                        { q: "|x| = 6, x = ?", a: "±6", bad: ["6", "-6", "brak"] },
+                        { q: "|a|=|b|, a≠b, to:", a: "a = -b", bad: ["a = b", "a+b=1", "a·b=1"] },
+                        { q: "Całkowite między -3,5 a 2,5:", a: "6", bad: ["5", "7", "4"] },
+                        { q: "|−2|·|−3| − |−1| =", a: "5", bad: ["6", "7", "4"] },
+                        // Podzielność
+                        { q: "NWD(48, 36) =", a: "12", bad: ["6", "18", "24"] },
+                        { q: "NWW(15, 20) =", a: "60", bad: ["30", "45", "300"] },
+                        { q: "NWD=6, a·b=180, NWW=?", a: "30", bad: ["36", "15", "1080"] },
+                        { q: "Liczb pierwszych < 20:", a: "8", bad: ["6", "7", "9"] },
+                        { q: "Suma dzielników 28 (bez 28):", a: "28", bad: ["14", "56", "27"] },
+                        // Zaokrąglanie
+                        { q: "9,995 ≈ (setne):", a: "10,00", bad: ["9,99", "9,90", "10,10"] },
+                        { q: "14567 ≈ (tysiące):", a: "15000", bad: ["14000", "14500", "14600"] },
+                        { q: "0,0045 ≈ (tysięczne):", a: "0,005", bad: ["0,004", "0,010", "0,000"] },
+                        { q: "Która ≈ 500 (setki)?", a: "467", bad: ["449", "551", "549"] },
+                        { q: "3,1415 ≈ (setne):", a: "3,14", bad: ["3,15", "3,10", "3,142"] }
                     ],
                     medium: [
                         { q: "Środek ciężkości △:", a: "środkowych", bad: ["wysokości", "dwusiecznych", "symetralnych"] },
